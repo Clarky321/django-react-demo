@@ -1,1 +1,1 @@
-# django-react-demo
+# Демо проект Django-React

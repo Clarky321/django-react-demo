@@ -7,7 +7,9 @@ class UserSerializer(serializers.ModelSerializer):
     first_name = serializers.CharField(required=True, max_length=30)
     last_name = serializers.CharField(required=True, max_length=30)
     email = serializers.EmailField(required=True)
-    phone_number = serializers.CharField(required=True, max_length=15)
+    phone_number = serializers.CharField(
+        write_only=True, required=True, max_length=15
+    )  # Оставляем как write_only
     password = serializers.CharField(write_only=True)
     confirm_password = serializers.CharField(write_only=True)
 

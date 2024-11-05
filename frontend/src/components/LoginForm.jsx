@@ -18,6 +18,7 @@ function LoginForm() {
             const res = await api.post("/api/token/", { username, password });
             localStorage.setItem(ACCESS_TOKEN, res.data.access);
             localStorage.setItem(REFRESH_TOKEN, res.data.refresh);
+            localStorage.setItem("USERNAME", username);
             navigate("/");
         } catch (error) {
             alert("Ошибка входа: проверьте данные");

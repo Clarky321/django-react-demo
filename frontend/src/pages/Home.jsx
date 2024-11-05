@@ -1,5 +1,12 @@
+import HomeForm from "../components/HomeForm"
+
 function Home() {
-    return <div>Главная страница</div>
+    return (
+        <div>
+            <HomeForm /> {/* Включаем компонент HomeForm для отображения шапки */}
+            <div>Добро пожаловать на главную страницу</div>
+        </div>
+    );
 }
 
-export default Home
+export default Home;

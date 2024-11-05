@@ -3,11 +3,12 @@ import api from "../api";
 import { useNavigate } from "react-router-dom";
 import "../styles/RegisterForm.css";
 
-function Form({ route, method }) {
+function RegisterForm({ route, method }) {
     const [username, setUsername] = useState("");
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
+    const [phoneNumber, setPhoneNumber] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const [loading, setLoading] = useState(false);
@@ -19,7 +20,7 @@ function Form({ route, method }) {
 
         try {
             const data = method === "register"
-                ? { username, first_name: firstName, last_name: lastName, email, password, confirm_password: confirmPassword }
+                ? { username, first_name: firstName, last_name: lastName, email, password, phone_number: phoneNumber, confirm_password: confirmPassword }
                 : { username, password };
 
             await api.post(route, data);
@@ -74,7 +75,7 @@ function Form({ route, method }) {
                         type="tel"
                         value={phoneNumber}
                         onChange={(e) => setPhoneNumber(e.target.value)}
-                        placeholder="Phone Number"
+                        placeholder="Телефон"
                         required
                     />
                     <input
@@ -102,4 +103,4 @@ function Form({ route, method }) {
     );
 }
 
-export default Form;
+export default RegisterForm;

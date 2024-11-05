@@ -34,13 +34,13 @@ function Form({ route, method }) {
 
     return (
         <form onSubmit={handleSubmit} className="form-container">
-            <h1>{method === "register" ? "Register" : "Login"}</h1>
+            <h1>{method === "register" ? "Регистрация" : "Login"}</h1>
             <input
                 className="form-input"
                 type="text"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
-                placeholder="Username"
+                placeholder="Логин"
                 required
             />
             {method === "register" && (
@@ -50,7 +50,7 @@ function Form({ route, method }) {
                         type="text"
                         value={firstName}
                         onChange={(e) => setFirstName(e.target.value)}
-                        placeholder="First Name"
+                        placeholder="Имя"
                         required
                     />
                     <input
@@ -58,7 +58,7 @@ function Form({ route, method }) {
                         type="text"
                         value={lastName}
                         onChange={(e) => setLastName(e.target.value)}
-                        placeholder="Last Name"
+                        placeholder="Фамилия"
                         required
                     />
                     <input
@@ -66,15 +66,23 @@ function Form({ route, method }) {
                         type="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        placeholder="Email"
+                        placeholder="Почта"
+                        required
+                    />
+                    <input
+                        className="form-input"
+                        type="tel"
+                        value={phoneNumber}
+                        onChange={(e) => setPhoneNumber(e.target.value)}
+                        placeholder="Phone Number"
                         required
                     />
                     <input
                         className="form-input"
                         type="password"
-                        value={confirmPassword}
-                        onChange={(e) => setConfirmPassword(e.target.value)}
-                        placeholder="Confirm Password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        placeholder="Пароль"
                         required
                     />
                 </>
@@ -82,13 +90,13 @@ function Form({ route, method }) {
             <input
                 className="form-input"
                 type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="Password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                placeholder="Подтвердите пароль"
                 required
             />
             <button className="form-button" type="submit" disabled={loading}>
-                {loading ? "Processing..." : method === "register" ? "Register" : "Login"}
+                {loading ? "Загрузка..." : method === "register" ? "Регистрация" : "Login"}
             </button>
         </form>
     );

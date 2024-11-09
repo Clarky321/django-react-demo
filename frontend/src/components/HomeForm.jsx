@@ -20,8 +20,8 @@ function Header({ username }) {
     return (
         <header className="header">
             <div className="app-icon"> {/* Здесь можно добавить иконку приложения */}
-                <img src="../assets/logo.png" alt="" className="logo" />
-                <span className="app-name">ProjectName</span>
+                <img src="../assets/icons1.ico" alt="logo" className="logo" />
+                <span className="app-name">САЙТ</span>
             </div>
             <div className="user-section" onClick={toggleMenu}>
                 <span className="username">{username}</span>
